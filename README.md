@@ -70,7 +70,7 @@ numbers.sort()
 print(numbers)
 
 print(sorted(numbers))
-#
+# 
 numbers = [32,45,23,25]
 
 while numbers != sorted(numbers):
@@ -78,4 +78,40 @@ while numbers != sorted(numbers):
     if numbers[i] >numbers[i +1]:
       numbers [i] > numbers [ i+1], numbers [i]
 print( numbers)
+
+
+# working with files
+# write
+file= open('files/text.txt','w')
+file.write('Hello')
+file.close
+
+# append
+file =  open('files/text.txt','a')
+file.write(Hello- to the end')
+file.close
+#read
+file.open('files/text.txt','r')
+file.read()
+file.close()
+# working with files
+def working_with_files(path_to_file):
+file= open(path_to_file,'w')
+file.write(data)
+file.close()
+
+file= open(path-to-file,'r')
+result = file.read()
+file.close
+
+return result
+
+# with ...as 
+with open ('files/text.txt', 'w') as file:file.write('You can write here')
+
+with open('files/text.txt', 'a') as file:
+file.write('You can write here')
+
+with open('files/text.txt','r') as file:
+file.read()
 
