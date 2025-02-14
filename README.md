@@ -109,9 +109,44 @@ return result
 # with ...as 
 with open ('files/text.txt', 'w') as file:file.write('You can write here')
 
+#
+
 with open('files/text.txt', 'a') as file:
 file.write('You can write here')
 
 with open('files/text.txt','r') as file:
 file.read()
+
+# reverse 
+class  Solution:
+  def reverseVowels(self,s: str)-> str:
+    s_cpy = list(s)
+    vowels = {'a','e','i','o','u'}
+    l = 0
+    r = len(s)-1
+
+    while l <= r:
+      if s_cpy[l].lower()not in vowels and l+1 <len(s_cpy):
+        l+=1
+      elif s_cpy[r].lower90 not in vowels ans r+>=0:
+        r -=1
+      else:
+      s_cpy[l],s_cpy[r] =s-cpy[r],s_cpy[l]
+      l += 1
+      r -= 1
+    return ' ' , joint(s_cpy)
+
+# import webbrowser
+
+def open_url(link):
+  webbrowser.open(link)
+my =  input('Enter adress: ' )
+if my == 'Youtube'
+  open_url(' https://www.youtube.com ' )
+elif my == ' Facebook'
+  open_url( 'https://www.facebook.com ')
+elif my ==  'Linkedin'
+  open_url (' https://ru.linkedin.com ')
+else:
+  print(' Adress is not found' )
 
