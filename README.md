@@ -150,3 +150,33 @@ elif my ==  'Linkedin'
 else:
   print(' Adress is not found' )
 
+# try
+def func(a,b):
+  result = a/b
+  return f'answer: {result}'
+  
+while True:
+  try:
+    my_func = func(
+      int(input(' First number: ')),
+      int(input(' Second number: ')),
+      )
+      print(my_func)
+      break
+    except ValueError:
+      print(' Wrong Value')
+    except ZeroDivisionError:
+      print(' Undefined')
+#
+w = ' Kyrgyzstan'
+my_value = input(' : ')
+first_el = 0
+second_el = 0
+for i in w.lower():
+  if i in my_value:
+    if i == my_value[0]:
+      first_el +=1
+    else:
+      second_el +=1
+print (f'{my_value[0]} -{first_el} pcs')
+print(f' {my_value[2] -{second_el} pcs')
