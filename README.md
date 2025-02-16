@@ -180,3 +180,74 @@ for i in w.lower():
       second_el +=1
 print (f'{my_value[0]} -{first_el} pcs')
 print(f' {my_value[2] -{second_el} pcs')
+
+# Day 7 If-Else
+a = int(input('Enter first number: '))
+b = int(input('Enter second number: '))
+operation = input(' Choose operation (+,-,*,/):')
+result = 0
+if operation ==' + ':
+    result = a+b
+elif operation == '-':
+    result = a-b
+elif operation == ' * ':
+    result = a * b
+elif operation == '/':
+    result = 'a/b'
+else:
+    print(' Wrong operation ')
+print (result)
+#
+numbers = [12,34,57,67]
+result = ' '
+for i in numbers:
+    if i %2 ==0:
+        print('Even')
+    else:
+        print('Odd')
+print(result)
+#
+number = float(input('Enter number:'))
+if number > 0:
+  print(f' {number} is positive')
+elif number <0:
+  print(f'{number} is negative')
+else:
+  print(f'{number} is zero')
+
+# compare two prices
+price1 = float(input('First:'))
+price2 = float(input('Second:'))
+if price1 > price2:
+  print(f'{price1} is greater than {price2}')
+elif price 1 < price2:
+  print(f'{price1} is cheeper than {price2}')
+else:
+  print(f' {price1} is equal to {price2}')
+
+# Pass or Fail
+score = int(input('Enter your score:'))
+if score >=90:
+  print ('Passed!, Wellcome!')
+else:
+  print('Failed! Try next time!')
+# Age Eligibility to use an app 
+age = int(input('Your age:'))
+if age >= 16:
+  print('Next step')
+else:
+  print('You cannot use this app,yet!')
+
+# Divisibility Check
+num = int(input('Enter number:'))
+if num % 5 ==0:
+  print(f'{num} is divisible by 5')
+else:
+  print(f'{num} is not divisble by 5')
+# Simple Password Checker
+correct_password = 'Sam909'
+password = input('Enter the password:')
+if password == correct_password:
+  print('Access Granted!')
+else:
+  print('Access Denied!')
