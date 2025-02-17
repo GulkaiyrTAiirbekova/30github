@@ -251,3 +251,96 @@ if password == correct_password:
   print('Access Granted!')
 else:
   print('Access Denied!')
+
+# Data types
+# Numeric : int
+a = 10
+print(type(a))
+# float
+b = 12.3
+print(type(b))
+# complex
+c= 2+3j
+print(type(c))
+
+# String
+text = ' Hello,Github'
+print(type(text))
+# Accessing characters
+text = ' Hello,Github'
+print(text[0:2])  # Output: He
+# String concatenation
+first_word = 'Hello'
+second_word = 'Github'
+message = first_word + ',' + second_word
+print(message)
+#
+first_name = 'Tom'
+last_name = 'Jerry'
+user_name = first_name + last_name
+print(user_name)
+# List
+my_list = [2,4, 'Tom', 23.6]
+# Access elements
+print(my_list[2]) # output: Tom
+# append
+my_list = [2,4, 'Tom', 23.6]
+my_list.append('Sam') 
+print(my_list)  # output[2, 4, 'Tom', 23.6, 'Sam']
+# remove
+my_list = [2,4, 'Tom', 23.6]
+my_list.remove('Tom')
+print(my_list)   # [2, 4, 23.6]
+# min and max
+my_numbers = [12,3,56,0,7]
+print(max(my_numbers)) # outbut:56
+print(min(my_numbers)) # output: 0
+# Tuple
+tuple = (12,34, ' Tom','Sam')
+print(type(tuple))
+# Access elements
+tuple = (12,34, ' Tom','Sam')
+print(tuple[1])
+# separate tupples
+my_tuple =(1,2,3)
+for tuple in my_tuple:
+    print(tuple)
+# Dictionary (dict)
+Student = {'name': 'Tom','age': '13', 'course': 'Python'}
+print(type(Student))
+print(Student ['course'])
+# Add a new key-value pair
+Student = {'name': 'Tom','age': '13', 'course': 'Python'}
+Student['grade'] = 'A'
+print(Student)
+#
+person = {'name': 'Tom','age':'30','city': 'Bishkek'}
+print(len(person)) # output:3
+#set
+my_set = {1,3,5,7,8}
+my_set.add(6)
+my_set.remove(5)
+print(my_set)
+#
+my_set = {9,8,7,6,4}
+for set in my_set:
+        print(set)
+# union()
+set1 ={1,2,3,4}
+set2 ={6,7,8,9}
+print('Union using():', set1.union(set2))  #output Union using(): {1, 2, 3, 4, 6, 7, 8, 9}
+print('difference using():',set1.difference(set2))
+print('difference using &:',set2- set1 )
+print('Difference using difference():', set2.difference(set1))
+print('Using symmetric_difference():', set1.symmetric_difference(set2))
+# Boolean (bool)
+bool = 5<2
+print(bool,type(bool))
+#
+number= int(input('Enter number:'))
+if number > 50:
+  print('Number is greated than 50')
+else:
+  print('Number is less than 50')
+        
+
