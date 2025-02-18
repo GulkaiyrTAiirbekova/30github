@@ -342,5 +342,49 @@ if number > 50:
   print('Number is greated than 50')
 else:
   print('Number is less than 50')
-        
+  # Loop: For,While
+  # for- # access elements  one by one
+  numbers =(1,5)
+  for in range(1,5):
+    print(i,i+1) 
+  # 
+  my_list = [23,3,2,6,7]
+for i in (23,3,2,6,7):
+    print(i)
+#
+names = ('Tom','Sam','Grey')
+for name in names:
+    print(name)
+#
+language= 'Python'
+for i in language:
+    print(i)
+# for ...range 
+# generate numbers from 0to 5
+my_numbers = (0,5)
+for i in range(0,5):
+  print(i+1) #+1 to include 5 too
+#
+names = ('Sam','Tom','Mike','Grey')
+for name in names:
+  if name == 'Grey':
+    break
+  else:
+    print(name)
+#
+names = ('Sam','Tom','Mike','Grey')
+for name in names:
+  if name== 'Tom':
+    continue
+print(names)
+#
+colors = ('Red','Green','Yellow','Blue')
+toys = ('Ball','Baloon','Fox','Snowman')
+for color in colors:
+  for toy in toys:
+    print(color, toy)
+print()
+
+    
+  
 
