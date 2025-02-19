@@ -384,7 +384,70 @@ for color in colors:
   for toy in toys:
     print(color, toy)
 print()
+# MAP
+n = ['1','2','3','4']
+def doublt(val):
+  return(val*2)
+res = list(map(doublt(n))
+print(res)
+# map with lamda (shorter one)
+n = ['1','2','3','4']
+res = list(map(lambda x:x *2,n))
+print (res)
+#
+d= [5,4,3,2,1]
+res = list(map(lambda x:x *2,d))
+print (res) # output:[10, 8, 6, 4, 2]
+#
+d = ['5','4','3','2','1']
+res = list(map(lambda x:x *2,d))
+print (res)  #output: ['55', '44', '33', '22', '11']
+# map with 2 iterables
+a = [1,2,3,5]
+b= [9,8,7,4]
+res = map(lambda x,y: x+y,a,b)
+print(list(res)) #output: [10, 10, 10, 9]
+res =map (lambda y,x: y-x,b,a)
+print(list(res)) # output [8, 6, 4, -1]
+#
+a = [1,2,3,4]
+b= [5,6,7,8]
+res = map(lambda x,y: x+y,a,b)
+res = map(lambda y,x : y-x,b,a)
+print(list(res))
+# map() Converting to uppercase
+names = ['tom','sam','mike']
+res = map(str.upper,names) #Explanation: The str.upper method is applied to each element in the list fruits using map().
+print(list(res))  output: ['TOM', 'SAM', 'MIKE']
+#
+languages =('python', 'css','html')
+res = map(str.upper,languages)
+print(list(res)) # output : ['PYTHON', 'CSS', 'HTML']
+#
+types = ['str','int','tuple','bool']
+res = map(str.upper, types)
+print(list(res)) # output: ['STR', 'INT', 'TUPLE', 'BOOL']
 
-    
+# MAP Extracting [] characters from strings
+
+a = ['str','int','tuple','bool']
+res = map(lambda a:a [0],a)
+print(list(res)) # output:['s', 'i', 't', 'b']
+
+res = map(lambda a:a [2],a)
+print(list(res)) # output:['r', 't', 'p', 'o']
+
+res = map(lambda a:a [-1],a)
+print(list(res)) # output:['r', 't', 'e', 'l']
+# MAP .STRIP-Removing whitespaces from strings
+words = ['  you', '   are', ' intellegent']
+res = map(str.strip,words)
+print(list(res))  # output:['you', 'are', 'intellegent']
+
+res = map(str.split,words)
+print(list(res))   # output:[['you'], ['are'], ['intellegent']]
+
+
+
   
 
