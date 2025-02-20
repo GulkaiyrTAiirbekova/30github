@@ -447,7 +447,32 @@ print(list(res))  # output:['you', 'are', 'intellegent']
 res = map(str.split,words)
 print(list(res))   # output:[['you'], ['are'], ['intellegent']]
 
+# Understanding Exceptions and Syntax Errors
 
+a = input(str('Enter you name:'))
+b = int(input('Enter your Code:'))
+res = ' '
+try:
+    print(res)
+except ValueError:
+    print('Use only letters')
+except ZeroDivisionError:
+    print( ' Do not divide to zero')
+else:
+    print('Continue')
+#
+a = int(input('Enter first number:'))
+b = int(input('Enter Second number:'))
+result = (a/b)
+def divide_numbers(a, b):
+    try:
+        result = a / b
+        return result
+    except ZeroDivisionError:
+        return 'Cannot divide by zero!'
+    except ValueError:
+        return 'Invalid input! Please enter numbers.'
+print(result)
 
   
 
