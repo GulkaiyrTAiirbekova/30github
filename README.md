@@ -473,6 +473,79 @@ def divide_numbers(a, b):
     except ValueError:
         return 'Invalid input! Please enter numbers.'
 print(result)
+# Methods
+class Car:
+    def __init__(self,brand,color):
+        self.brand =brand
+        self.color=color
+    def show_info(self):
+        return f'car:{self.brand},Color:{self.color}'
+car1 = Car('Porche','Red')
+car2 = Car ('Ferrari', 'Black')
+print (car1.show_info())   #output: car:Porche,Color:Red
+print(car2.show_info())    # output: car:Ferrari,Color:Black
+#
+class Book:
+    def __init__(self, genre,cover):
+        self.genre =genre
+        self.cover =cover
+    def show_info(self):
+        return f'Book:{self.genre},Cover:{self.cover}'
+book1 = Book('Science_fiction','Hardcover')
+book2 = Book('Fantasy','Softcover')
+print(book1.show_info()) # output:Book:Science_fiction,Cover:Hardcover
+print(book2.show_info())   #output: Book:Fantasy,Cover:Softcover
+#
+class laptop:
+    def __init__(self,firm,condition):
+        self.firm = firm
+        self.condition= condition
+    def show_info(self):
+        return f'laptop:{self.firm},condition:{self.condition}'
+laptop1=laptop('Mac','New')
+laptop2=laptop('Acer','used')
+print(laptop1.show_info())
+print(laptop2.show_info())
+#
+class Bird:
+    species: ' Aves'
+    def __init__(self,name,size):
+        self.name=name
+        self.size= size
+    def show_info(self):
+        return f' Bird:{self.name}, Size:{self.size}'
+Bird1 = Bird('Eagle','big')
+Bird2 =Bird('Sparrow','small')
+print(Bird1.show_info())  # Bird:Eagle, Size:big
+print(Bird2.show_info()) # Bird:Sparrow, Size:small
+#
+class Dog:
+    species= 'Mammal '
+    def __init__(self,name,age):
+        self.name =name
+        self.age =age
+dog1 =Dog('Money','2')
+dog2= Dog('Rex','4')
+print(dog1.species)  #Mammal
+print(dog2.species) #Mammal
+Dog.species = ' Predator'
+print(dog1.species) #Predator
+print(dog2.species) #Predator
+class Person:
+    population =0
+    def __init__(self,name):
+        self.name =name
+        Person.population += 2
+    @classmethod
+    def get_population(cls):
+        return f'Population:{cls.population}'
+    @staticmethod
+    def is_adult(age):
+        return age>=18
+p1 =Person('Sam')
+p2 =Person('Tom')
+print(Person.get_population())  #Population:4
+print(Person.is_adult(20))  #True
 
-  
+
 
