@@ -546,6 +546,17 @@ p1 =Person('Sam')
 p2 =Person('Tom')
 print(Person.get_population())  #Population:4
 print(Person.is_adult(20))  #True
-
+#
+class Animal:
+    def __init__(self,name):
+        self.name = name
+    def sound(self):
+        return 'sound of animal'
+class Dog(Animal):
+    def sound(self):
+        return 'Gaph-Gaph'
+dog =Dog('Money')
+print(dog.name)  #Money
+print(dog.sound()) # Gaph-Gaph
 
 
