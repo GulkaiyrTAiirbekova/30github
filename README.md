@@ -558,5 +558,40 @@ class Dog(Animal):
 dog =Dog('Money')
 print(dog.name)  #Money
 print(dog.sound()) # Gaph-Gaph
+# List Slicing  list[start:stop:step]
+my_list = ["y", "w", "q", "r", "s", "t", "u", "v", "i"]
+print (my_list[2:6:2]) #['q', 's']
+print (my_list[2:8]) #['q', 'r', 's', 't', 'u', 'v']
+print (my_list[0:4:7]) #['y']
+print (my_list[::-2]) #['i', 'u', 's', 'q', 'y']
+# List Methods
+my_list = [1, 2, 3, 3, 4]
+my_list.append(5)
+print(my_list) #[1, 2, 3, 3, 4, 5]
+my_list = [9,8,7,6,5]
+my_list.extend([14,15])
+print (my_list) #[9, 8, 7, 6, 5, 14, 15]
+my_list = [9,8,7,6,5]
+my_list.remove(7)
+print(my_list) #[9, 8, 6, 5]
+pop_list = [1,2,3,4]
+pop_list.pop()
+print(pop_list) #[1, 2, 3]
+my_list =[12,23,45,67,89]
+my_list.index (45)
+print (my_list) #[1, 2, 3, 3, 4] (need to check again)
+my_list =[12,23,45,67,89]
+my_list.count(2)
+print(my_list) # need to check
+my_list = [100,3,45,2,55,67]
+my_list.sort()
+print(my_list) #[2, 3, 45, 55, 67, 100]
+my_list = [100,3,45,2,55,67]
+my_list.reverse()
+print(my_list)  #[67, 55, 2, 45, 3, 100]
+my_list = [100,3,45,2,55,67]
+my_list.clear()
+print(my_list) #[]
+
 
 
