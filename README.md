@@ -592,6 +592,25 @@ print(my_list)  #[67, 55, 2, 45, 3, 100]
 my_list = [100,3,45,2,55,67]
 my_list.clear()
 print(my_list) #[]
-
+# Palindrome ('Mam','dad','madam')
+# Step 1: reversed option
+w ='level'
+reversed_w = w[::-1]
+print(reversed_w) #level
+# Step2: Step 2: Compare the Original and Reversed String
+w= 'level'
+if w == w[::-1]:
+    print('palindrome')
+else:
+    print('Not a palindrome') #palindrome
+def is_palindrome(word):
+    return word == word[::-1]  
+print(is_palindrome("madam"))  # True
+print(is_palindrome("hello"))
+# Checking a Number (Like 121)
+def is_palindrome_number(n):
+    return str(n) == str(n)[::-1]  # Convert number to string and check
+print(is_palindrome_number(121))  # True
+print(is_palindrome_number(123))  # False
 
 
