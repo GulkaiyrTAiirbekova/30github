@@ -630,5 +630,97 @@ word2 = "pqr"
 result = merge_strings(word1, word2)
 print(result)  #apbqcr
 
+# weight converter
+weight = float(input('Enter your weight:'))
+unit = input('Kilograms or Pounds? (K or L):')
+if input =='K':
+    weight = weight * 2.205
+    unit= 'Lbs.'
+    print(f'Your weight is: {round(weight,1)}{unit}')
+elif unit =='L':
+    weight =weight/2.205
+    unit = 'Kgs.'
+    print(f'Your weight is: {round(weight,1)}{unit}')
+else:
+    print(f'{unit} was not valid')
+  ## Temperature Conversion
+unit= input("Is temperature in Celsius or Fahrenheit(C/F):")
+temp = float(input("Enter the temperature:"))
+if unit == "C":
+    temp= round((9*temp)/5+32,1)
+    print(f"The temperature is Fahrenheit in:{temp} F")
+
+elif unit =="F":
+    temp = round((temp-32)*5/9,1)
+    print(f"The temperature is Celsius in:{temp}C")
+else:
+    print(f'{unit} is an invalid of measurement')# Is temperature in Celsius or Fahrenheit(C/F):C #Enter the temperature:32,The temperature is Fahrenheit in:89.6 
+# Logical Operators = Evaluate multiple conditions (or,and,or)
+temp=  20
+is_raining =True
+if temp >35 or temp<0 or is_raining:
+    print("The outdoor event is cancelled")
+else:
+    print("The outdoor even is still scheduled") #The outdoor event is cancelled
 
 
+temp= 20  # i can change temp here , so output will be different
+is_sunny= True
+
+if temp >= 28 and is_sunny:
+    print("It is hot outside")
+    print("It is sunny")
+elif temp<=0and is_sunny:
+    print("It is cold outside:")
+    print("It is Sunny")
+elif 28 > temp>0 and is_sunny:
+    print("It is warm outside") #It is warm outside
+    print("It is sunny") #It is sunny
+#
+#Logical Operators = Evaluate multiple conditions (or,and,or)
+'''temp=  20
+is_raining =True
+if temp >35 or temp<0 or is_raining:
+    print("The outdoor event is cancelled")
+else:
+    print("The outdoor even is still scheduled")''' #The outdoor event is cancelled
+temp= 0  # i can change temp here , so output will be different
+is_sunny= False
+
+if temp >= 28 and is_sunny:
+    print("It is hot outside ")
+    print("It is sunny")
+elif temp<=0 and is_sunny:
+    print("It is cold outside:")
+    print("It is Sunny")
+elif 28 > temp>0 and not is_sunny:
+    print("It is warm outside")
+    print("It is Cloudy")
+elif temp <= 0 and not is_sunny:
+    print("It is hot outside:")
+    print("It is cloudy")
+elif 28 > temp > 0 and not  not is_sunny:
+    print("It is warm outside") #It is hot outside:
+    print("It is Cloudy") #It is cloudy
+#countdown time
+import time
+my_time = int(input("Enter the time in seconds:"))
+for x in range(0,my_time):
+    print(x)
+    time.sleep(1)
+print("Time's UP!") 
+# Second option to count backward
+import time
+my_time = int(input("Enter the time in seconds:"))
+for x in range (my_time,0,-1): # to count backward
+    print(x)
+    time.sleep(3)
+print("Your time is over!")
+# Third option 
+import time
+my_time = int(input("Enter your time in seconds:"))
+for x in range(my_time,0,-1):
+    seconds = x%60 #gives remeinder of any division
+    print(f"00:00:{seconds:02}") #{seconds:02}= format specifier
+    time.sleep(1)
+print("Time's Up")
