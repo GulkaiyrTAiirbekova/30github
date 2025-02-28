@@ -824,3 +824,87 @@ if capitals.get("Russia"):
     print("That capital exist ")
 else:
     print("That capital doesn't exist") #That capital exist
+# Concession stand program using dictionary
+menu = {"pizza": 3.00,
+        "nachos":4.50,
+        "popcorn":6.00,
+        "fries": 2.50,
+        "chips": 1.00,
+        "pretzel": 3.50,
+        "soda":3.00,
+        "lemonade": 4.25}
+cart  =[]
+total = 0
+print("----------MENU ")
+for key,value in menu.items():
+    print(f"{key:10}:${value:2f}")
+print("-----------------------")
+
+while True:
+    food= input("Select an item(q to quit):").lower()
+    if food == "q":
+        break
+    elif menu.get(food) is not None:
+        cart.append(food)
+print("---------YOUR ORDER-------")
+for food in cart:
+    total += total+menu.get(food)
+    print(food,end = "  ")
+print()
+print(f"Total is:${total:2f}")
+# IMPORT RANDOM
+import random
+#print(help(random))
+number=random.randint(1,20)
+print(number) #any number
+import random
+low =1
+high = 100
+number= random.randint(low,high)
+number = random.random()
+print(number) #0.47490640923597605
+import random
+low =1
+high = 100
+options = ("rock","paper","scissors")
+options= random.choice(options)
+print(options)
+import random
+low =1
+high = 100
+options = ("rock","paper","scissors")
+cards = ["2","3","4","5","6","7","8","9","10","J","K","Q","A"]
+random.shuffle(cards)
+print(cards) #['K', '8', '5', '10', 'A', '2', 'Q', '3', '7', '6', '4', 'J', '9']
+#NUMBER GUESSING GAME
+import random
+
+lowest_num=1
+highest_num =100
+answer = random.randint(lowest_num, highest_num)
+print(answer) #51
+guesses =0
+is_running= True
+print("Python Number Guessing Game")  #Python Number Guessing Game
+
+print(f"Select a number between  {lowest_num} and {highest_num}")  #Select a number between  1 and 100
+
+while is_running:
+    guess= input("Enter your guess: ")
+    if guess.isdigit():
+        guess= int(guess)
+        guesses+=1
+        if guess<lowest_num or guess> highest_num:
+            print("That number out of range")
+            print(f"Please,select a number between {lowest_num} abd {highest_num}")
+        elif  guess<answer:
+            print("Too low!Try again!")
+        elif guess>answer:
+            print("Too high!Try again!")
+        else:
+            print(f"Correct! The answer was{answer}")
+            print(f"NUmber of guesses:{guesses}")
+            is_running = False
+    else:
+        print("Invalid guess")
+        print(f"Please select a number between {lowest_num} and {highest_num}")
