@@ -908,3 +908,29 @@ while is_running:
     else:
         print("Invalid guess")
         print(f"Please select a number between {lowest_num} and {highest_num}")
+#Rock,paper,Scissors game
+import random
+options =("rock","paper","scissors")
+running= True
+
+while True:
+    player =None
+    computer= random.choice(options)
+
+    while player not in options:  # to use only given options
+        player = input("Enter a choice(rock,paper,scissors):")
+    print(f"Player:{player}")
+    print(f"Computer:{computer}")
+    if player == computer:
+        print("It's a tie!")
+    elif player == "rock" and computer == "scissors":
+        print("You win!")
+    elif player == "paper" and computer == "rock":
+        print("You win!")
+    elif player == "scissors" and computer == "paper":
+        print("You win!")
+    else:
+        print("You lose!")
+    if not input("Play again? (y/n): ").lower()=="y":
+        running= False
+    print("Thanks for playing!")
