@@ -934,3 +934,55 @@ while True:
     if not input("Play again? (y/n): ").lower()=="y":
         running= False
     print("Thanks for playing!")
+#dice art
+import random
+
+#print("\u25CF \u250C \u2500 \u2510 \u2501 \u2514 \u2518")
+# ● ┌ ─ ┐ ━ └ ┘ #it's needed to built it
+"┌─────────┐"
+"|         |"
+"|         |"
+"|         |"
+"└─────────┘"
+dice_art ={
+    1:("┌─────────┐",
+       "|         |",
+       "|    ●    |",
+       "|         |",
+       "└─────────┘"),
+    2:("┌─────────┐",
+       "|  ●      |",
+       "|         |",
+       "|     ●   |",
+       "└─────────┘"),
+    3:("┌─────────┐",
+       "|  ●      |",
+       "|    ●    |",
+       "|     ●   |",
+       "└─────────┘"),
+    4:("┌─────────┐",
+       "|  ●   ●  |",
+       "|         |",
+       "|  ●   ●  |",
+       "└─────────┘"),
+    5: ("┌─────────┐",
+        "|  ●   ●  |",
+        "|    ●    |",
+        "|  ●   ●  |",
+        "└─────────┘"),
+    6:("┌─────────┐",
+       "|  ●   ●  |",
+       "|  ●   ●  |",
+       "|  ●   ●  |",
+       "└─────────┘")
+}
+dice= []
+total=0
+num_of_dice = (input("How many dice?: "))
+for die in range(num_of_dice):
+    dice.append(random. randint(1,6))
+for die in range(num_of_dice):
+    for line in dice_art.get()
+for die in dice:
+    total+= dice
+print(f"total:{total}")
