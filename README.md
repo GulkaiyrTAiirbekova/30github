@@ -934,16 +934,16 @@ while True:
     if not input("Play again? (y/n): ").lower()=="y":
         running= False
     print("Thanks for playing!")
-#dice art
+# dice art
 import random
-
-#print("\u25CF \u250C \u2500 \u2510 \u2501 \u2514 \u2518")
-# ● ┌ ─ ┐ ━ └ ┘ #it's needed to built it
-"┌─────────┐"
+# print("\u25CF \u250C \u2500 \u2510 \u2502 \u2514 \u2518")
+# ● ┌ ─ ┐ │ └ ┘ #characters are needed to built a dice
+''' 
+"┌─────────┐" #9 times
 "|         |"
 "|         |"
 "|         |"
-"└─────────┘"
+"└─────────┘" '''
 dice_art ={
     1:("┌─────────┐",
        "|         |",
@@ -978,11 +978,81 @@ dice_art ={
 }
 dice= []
 total=0
-num_of_dice = (input("How many dice?: "))
+num_of_dice = int(input("How many dice?: "))
+# random.randint(1,6) #The randint function in Python is a powerful tool
+# for generating random integers between two specified values.
+# dice.append(random.randint(1,6))
 for die in range(num_of_dice):
     dice.append(random. randint(1,6))
-for die in range(num_of_dice):
-    for line in dice_art.get()
+print(dice) # =>How many dice?: 5 =>[4, 2, 6, 1, 3]
+# for die in range(num_of_dice):
+#    for line in dice_art.get(dice[die]): #for every line
+#        print(line)
+for line in range(5):    # each tuple is made out of 5 elements, so 
+                         #instead of printing horizontal line, so we need 
+                         #to copy first lines of dice (1,3)
+    for die in dice:
+        print( dice_art.get(die)[line], end="")
+    print()     #How many dice?: 3
+                # [2, 1, 2]
+                #┌─────────┐┌─────────┐┌─────────┐
+                #|  ●      ||         ||  ●      |
+                #|         ||    ●    ||         |
+                #|     ●   ||         ||     ●   |
+                #└─────────┘└─────────┘└─────────┘
+                #total:5
 for die in dice:
-    total+= dice
-print(f"total:{total}")
+    total = sum(dice)  # if +=>TypeError: unsupported operand type(s) for 
+                       # #+=: 'int' and 'list'
+print(f"total:{total}") #total:13
+# function = A block of reusable code
+#            place() after the function name to invoke it
+#print("Happy birthday to you!") # imagine that it's a song of your own
+#print(" You are old!")          # and this song has to be repeated 3 times
+#print("Happy birthday to you!")
+#print()
+def happy_birthday():
+    print("Happy birthday to you!")
+    print(" You are old!")
+    print("Happy birthday to you!")
+happy_birthday() # to invoke the func only once,
+happy_birthday() #so to invoke it 3 times,
+happy_birthday() #need to invoke it 3 times
+# in case i wanna add smth new =>happy_birthday("Darling")
+def happy_birthday(name,age):
+    print(f"Happy birthday to {name}!")  #Happy birthday to Darling!
+    print(f" You are {age}!")           # You are 20!
+    print(f"Happy birthday to {name}!") #Happy birthday to Darling!
+happy_birthday("Darling",20)
+# displace_invoice
+def display_invoice(username,amount,due_date):
+    print(f"Hello {username}")
+    print(f" Your bill of ${amount:.2f} is due {due_date}")
+
+display_invoice(" Amelia", 55.60,"01/01") #Hello  Amelia
+                                         #Your bill of $55.60 is due 01/01
+
+#RETURN= statement used to end a function and
+#         send a result back to the caller
+def add(x,y):
+    z =x+y
+    return z
+def subtract(x,y):
+    z =x-y
+    return z
+def multiply(x,y):
+    z =x * y
+    return z
+def divide(x,y):
+    z =x / y
+    return z
+print(add(5,2))  #
+print(subtract(5,2)) #3
+print(multiply(5,2)) #10
+print(divide(5,2)) #2.5
+def create_name ( first,last):
+    first = first.capitalize()
+    last= last.capitalize()
+    return first  + " " + last
+full_name = create_name ("tom","hagen")
+print(full_name) #Tom Hagen
