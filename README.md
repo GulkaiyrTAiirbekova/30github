@@ -1056,3 +1056,77 @@ def create_name ( first,last):
     return first  + " " + last
 full_name = create_name ("tom","hagen")
 print(full_name) #Tom Hagen
+#Задача 1. FizzBuzz
+#Задача: Напишите программу, которая выводит числа от 1 до 100. Для чисел, кратных 3, выводите "Fizz", для чисел, кратных 5 — "Buzz",
+# а для чисел, кратных 3 и 5 — "FizzBuzz".
+'''for i in range(1,100):
+    if i % 3 ==0 and i% 5==0:
+        print("FizzBuzz")
+    elif i % 3 ==0:
+        print("Fizz")
+    elif i %5 ==0:
+        print("Buzz")
+    else:
+        print(i)'''
+#for prof
+'''def fizz_buzz():
+    return[
+        "FizzBuzz" if i %3 ==0 and i%5==0 else "Fizz" if i%3==0
+        else" Buzz" if i %5==0 else
+        i
+        for i in range(1,100)
+    ]
+print ("\n".join(map(str,(fizz_buzz()))))'''
+#Задача 2. АнаграммаюСлово или словосочетание, образованное путём перестановки букв, составляющих другое слово (или словосочетание).
+
+#Задача: Напишите функцию, которая проверяет, являются ли две строки анаграммами.
+
+'''def is_anagram (str1,str2):
+    return sorted(str1)==sorted(str2)
+print(is_anagram("Stop", "Post")) #False
+print(is_anagram("stop","post")) #True
+print(is_anagram(" Hello", "Sam"))''' #False
+
+'''from collections import Counter
+
+def is_anagram(str1,str2):
+    return Counter(str1)== Counter(str2)
+print(is_anagram(" tom","mot"))
+print(is_anagram ("hello"," world"))'''
+#Задача 3. Частотный словарь
+#Напишите функцию, которая подсчитывает количество каждого символа в строке.
+'''def char_frequency(s):
+    frequency ={}
+    for char in s:
+        if char in frequency:
+            frequency[char] +=1
+        else:
+            frequency[char] =1
+    return frequency
+print(char_frequency("Einstein"))''' #{'E': 1, 'i': 2, 'n': 2, 's': 1, 't': 1, 'e': 1}
+'''from collections import Counter
+
+
+def char_frequency(s): #count the number of characters (character frequency) in a string.
+    return dict(Counter(s))
+print(char_frequency("Einstein"))''' #{'E': 1, 'i': 2, 'n': 2, 's': 1, 't': 1, 'e': 1}
+#Задача 4. Поиск максимального подмассива (Алгоритм Кадане)
+# Реализуйте алгоритм Кадане для нахождения подмассива с максимальной суммой.
+'''def max_subarray_sum(arr):     # run two nested loops to iterate over all possible subarrays and
+                               # find the maximum sum
+    max_sum = current_sum =arr[0]
+    for num in arr [1:]:
+        current_sum = max(num,current_sum+num)
+    return max_sum
+print(max_subarray_sum([-2,1,-3,4,-1,2,1,-5,4]))'''#-2
+#Задача 5. Ротация списка
+#Задача: Реализуйте функцию, которая циклически сдвигает список на k позиций.
+# A deque stands for Double-Ended Queue. It is a data structure that allows adding and
+# removing elements from both ends efficiently.
+
+from collections import deque
+def rotate_list(lst,k):
+    d =deque(lst)
+    d.rotate(k) #Метод rotate(k) позволяет легко выполнить циклический сдвиг списка на k позиций.
+    return(list(d))
+print(rotate_list([1,2,3,4,5],2))  #[4, 5, 1, 2, 3]
