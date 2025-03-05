@@ -1130,3 +1130,96 @@ def rotate_list(lst,k):
     d.rotate(k) #Метод rotate(k) позволяет легко выполнить циклический сдвиг списка на k позиций.
     return(list(d))
 print(rotate_list([1,2,3,4,5],2))  #[4, 5, 1, 2, 3]
+#OOP- info for IT  as text and info(pic)
+#переменная внутри класса= поле класс, класс-  для удобства внесения данных
+'''class Animals:
+    name = None
+    age = None
+    color = None
+
+Animals.age = 4
+Animals.color = "Black"
+Animals.price = 1000.0
+print(Animals.age)''' #4
+'''class Car_BMW:
+    brand = None
+    color = None   #NOT GOOD CODE
+    price = None
+brand_car= Car_BMW.brand= "BMW"
+color_brand= Car_BMW.color  ="Blue"
+price_car= Car_BMW.price = 10.000
+print(brand_car,color_brand,price_car) #BMW Blue 10.0
+
+brand_car= Car_BMW.brand= "Mers"
+color_brand= Car_BMW.color  ="Black"
+price_car= Car_BMW.price = 15.000
+print(brand_car,color_brand,price_car)''' #Mers Black 15.0
+'''class Car:
+    def __init__(self,brand,color,price):
+        self.brand = brand
+        self.color = color
+        self.price= price
+    def show_info(self):
+        return f'car:{self.brand},color:{self.color},price:{self.price}'
+car1= Car('BMW','Red', '12.000')
+car2 = Car('Mers','Blue','15.000')
+print(car1.show_info()) #car:BMW,color:Red,price:12.000
+
+print(car2.show_info()) #car:Mers,color:Blue,price:15.000'''
+#Полиморфизм
+'''class Person:
+    def __init__(self,age,sex):  #self- относится только к полям данного поля , тк отл. внешний и внутренний
+        self.age = age
+        self.sex = sex
+    def show_info(self):   #get_data
+        return f'Person:{self.age},sex:{self.sex}'
+person1 = Person('20','male')
+person2 =Person('50','women')
+print(person1.show_info()) #person:20,sex:male
+
+print(person2.show_info())''' #person:50,sex:women
+
+'''class Phone:
+    def __init__(self,brand,color,price,memory):
+        self.brand = brand
+        self.color= color
+        self.price= price
+        self.memory =  memory
+    def show_info(self):
+        return f'Phone:{self.brand},color:{self.color},price:{self.price},memory:{self.memory}'
+phone1 = Phone('Apple','Silver','11.000','1T') #Phone:Apple,color:Silver,price:11.000,memory:1T
+
+phone2 = Phone('Samsung','Black','12.000','1.5T') #Phone:Samsung,color:Black,price:12.000,memory:1.5T
+
+print(phone1.show_info())
+print(phone2.show_info())'''
+#описать робота за счет
+'''class Cat:
+    name= None
+    age = None
+    isHappy= None
+
+#cat1= Cat('Alenka','2','happy')
+cat1=Cat()
+cat1.name = 'Alenka'
+cat1.age= 2
+cat1.isHappy= True
+cat2=Cat()
+cat2.name = 'Sakura'
+cat2.age=1
+cat2.isHappy= False
+print(cat1.name)
+print(cat2.name)'''
+#2
+class Cat:
+    name= None
+    age = None
+    isHappy= None
+    def set_data(self,name,age,isHappy):
+        self.name = name
+        self.age= age
+        self.isHappy= isHappy
+cat1=Cat
+cat1.set_data('Alenka',2,True)
+cat2=Cat
+cat2.set_data('Sakura',1,False)
