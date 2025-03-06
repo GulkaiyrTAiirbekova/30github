@@ -1223,3 +1223,74 @@ cat1=Cat
 cat1.set_data('Alenka',2,True)
 cat2=Cat
 cat2.set_data('Sakura',1,False)
+#POLIMIRFISM- Greek word...-"to have many forms".
+#              Poly= Many;Morphy=form
+# 2 wats to achieve POlYMORPHISM
+# 1. INHERITANCE = An object could be treated of the same class as a parent class
+# 2."Duck typing"= Object must have necessary attributes/methods
+
+from abc import ABC,abstractmethod
+class Shape:
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self,radius):
+        self.radius= radius
+        return (3.14 * self.radius ** 2)  # to calculate area in the circle
+
+class Square(Shape):
+    def __init__(self,side):
+        self.side=side
+    def area (self):
+        return self.side ** 2
+class Triangle (Shape):
+    def __init__(self,base,height):
+        self.base= base
+        self.height= height
+    def area(self):
+        return self.base* self.height * 0.5
+
+
+#circle = Circle()
+#create a list of shapes
+class Pizza(Circle):
+    def ___init__(self,topping, radius):
+        super().__init__(radius)
+        self.topping= topping
+        self.radius= radius
+
+
+
+shapes = [Circle (4),Square(5),Triangle(6,7),Pizza("pepperoni",15)]
+for shape in shapes:
+    print(f"{shape.area()} cm")
+#Methods
+class Microwave:
+    def __init(self,brand:str,power_rating:str)->None:
+        self.brand= brand
+        self.power_rating= power_rating
+        self.turned_on: bool= False
+
+    def turn_on(self)->None:
+        if self.turned_on:
+            print(f' Microwave ({self.brand} is already turned on')
+        else:
+            self.turned_on = True
+            print(f'Microwave{self.brand } is now turned on')
+    def turn_off(self)->None:
+        if self.turned_on:
+            self.turned_on= False
+            print(f' Microwave ({self.brand} is now  turned off')
+        else:
+            print(f'Microwave{self.brand } is already turned off')
+    def run(self,seconds:int)->None:
+        if self.turned_on:
+            print(f'Running {self.brand} for {seconds} seconds')
+        else:
+            print(f'A mystical force whispers:"Turn on your microwave first...')
+
+
+smeg: Microwave = Microwave ('Smeg','B')
+
