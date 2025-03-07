@@ -1294,3 +1294,63 @@ class Microwave:
 
 smeg: Microwave = Microwave ('Smeg','B')
 
+class Camera:
+    def  get_data(self,__memory,__photos):
+        self.memory= memory
+        self.photos = photos
+    def take_photos(self):
+        if self.memory>10:
+            self.photos += 'очередная новая фотка'
+            self.memory -=10
+            return 'Photo is taken'
+        else:
+            return ' Not enough memory'
+ class Animals:  #базовый класс .родительский
+    def __init__(self,species,age,color,breed):
+        self.species =species
+        self.age= age
+        self.color =color
+        self.breed =breed
+    def get_all_info(self):
+        return f'
+                Species: {self.species}
+                Age: {self.age}
+                Color:{self.color}
+                breed :{self.breed}'           
+class Dog:
+    def __init__(self,color,age,breed):
+        self.color= color
+        self.age= age
+        self.breed= breed
+    def gaph (self):
+        print(f' Gaph, I am {self.color} and {self.age}',{self.breed})
+dog =Dog( 'black',3,'pet')
+dog1 = Dog('white',4,'pet')
+dog2 =Dog('orange','1','wild')
+dog.gaph() #Gaph, I am black and 3
+
+dog1.gaph() # Gaph, I am white and 4
+dog2.gaph() Gaph, I am orange and 1 {'wild'}
+ class Cat:
+    def __init__(self,name,age):
+        self.name= name
+        self.age=age
+    def meow (self):
+        print(f'Meow, My name is {self.name}')
+
+cat = Cat('Alenka',2)
+cat.meow()         
+class Animals_on_land(Animals):  #идет расширение от родительского
+    def set_data(self, species,age,color,breed,habitat):#тут указываем дополнительные поля
+        super(Animals,self).__init__(self,species,age,color,breed) # переопределяем , расширяем
+        self.habitat= habitat
+
+    def get_all_info(self):  #является полиморфизмом, переопределяем и можем по-лругому переотпределять
+        all_info = super().get_all_info()
+        return f'{all_info} Место обитания: {self.habitat}'
+animal_on_land = Animals_on_land('Хишник',2,'yellow','Cat')
+animal_on_land.habitat = 'Africa'
+print(animal_on_land.get_all_info())'''   #   Species: Хишник
+#                Age: 2
+ #               Color:yellow
+#                breed :Cat
