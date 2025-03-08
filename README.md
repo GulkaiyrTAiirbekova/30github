@@ -1354,3 +1354,79 @@ print(animal_on_land.get_all_info())'''   #   Species: Хишник
 #                Age: 2
  #               Color:yellow
 #                breed :Cat
+Создать базовый класс Animals(type, speed, location).Умеют передвигаться
+
+Создать класс Cat().Умеет бегать.Просит накормить
+
+Создать класс Shark().Умеет плавать.Охотиться на всех вокруг 
+
+Создать класс Turtle().Умеет ползать
+'''
+
+class Animals:
+    def init(self, type, speed, location):
+        self.type = type
+        self.speed = speed
+        self.location = location
+
+    def move(self, a, b):
+        self.a = a
+        self.b = b
+        return f'{self.a} -> {self.b}'
+
+    def eats(self, food):
+        self.food = food
+        return self.food
+
+
+class Cat(Animals):
+    def init(self, type, speed, location):
+        super().init(type, speed, location)
+
+    def move(self, a, b):
+        super().move(a, b)
+        return f'{self.location} - {self.a} -> {self.b}'
+
+    def eats(self, food):
+        super().eats(food)
+        return 'Накорми меня вот этим:', self.food
+
+    def str(self):
+        info_move = self.move(self.a, self.b)
+        info_eats = self.eats(self.food)
+        return f'''
+                    Передвигается - {info_move}, 
+                    Кушает - {info_eats}'''
+''' 
+class Shark(Animals):
+    def init(self, type, speed, location):
+        super().init(type, speed, location)
+
+    def move(self, a, b, tail):
+        super().move(a, b)
+        self.tail = tail
+        return f'{self.tail} - {self.a} -> {self.b}'
+
+    def eats(self, food):
+        super().eats(food)
+        return 'Сегодня охота на', self.food
+
+    def get_all_info(self):
+        info_move = self.move(self.a, self.b, self.tail)
+        info_eats = self.eats(self.food)
+        return f'''
+                    Передвигается - {info_move},
+                    Кушает - {info_eats}'''
+
+
+cat1 = Cat('Cat', '40km', 'Home')
+cat1.move('room1', 'room2')
+cat1.eats('Fodder')
+
+print(cat1)
+
+shark1 = Shark('Рыба', '150km', 'Ocean')
+shark1.move('Ocean1', 'Ocean2', True)
+shark1.eats('Fish')
+
+print(shark1.get_all_info())
