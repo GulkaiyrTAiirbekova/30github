@@ -1430,3 +1430,61 @@ shark1.move('Ocean1', 'Ocean2', True)
 shark1.eats('Fish')
 
 print(shark1.get_all_info())
+class Potion:
+    def init(self, size, price):
+        self.size = size
+        self.price = price
+
+    def drink(self, character):
+        pass
+
+
+class Character:
+    def init(self, hp, mana, lvl):
+        self.hp = hp
+        self.mana = mana
+        self.lvl = lvl
+
+    def go(self):
+        return 'Бегает определенным образом'
+
+    def fight(self):
+        return 'Умеет сражаться'
+
+    def drink(self, character):
+        self.character = character
+        return f'Пьет персонаж: {self.character}'
+
+
+class Goblin(Character):
+    def atributes(self, hp, mana, lvl, trick):
+        super().init(hp, mana, lvl)
+        self.trick = trick
+
+    def go(self):
+        return 'Бегает очень быстро'
+
+    def fight(self):
+        return 'Не очень то умеет сражаться, но хитрый :)'
+
+    def drink(self, character):
+        super().drink(character)
+        self.hp += 10
+        return 'Здоровье увеличена на 10hp'
+
+
+class Zombie(Character):
+    def atributes(self, hp, mana, lvl, smart):
+        super().init(hp, mana, lvl)
+        self.smart = smart
+
+    def go(self):
+        return 'Бегает очень медленно'
+
+    def fight(self):
+        return 'Очень то умеет сражаться, еще и умный :)'
+
+    def drink(self, character):
+        super().drink(character)
+        self.hp += 5
+        return 'Здоровье увеличена на 5hp'
