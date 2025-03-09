@@ -1488,3 +1488,34 @@ class Zombie(Character):
         super().drink(character)
         self.hp += 5
         return 'Здоровье увеличена на 5hp'
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner       
+
+        self.balance = balance
+
+    def deposit(self, amount):
+        if amount > 0:
+            self.balance += amount
+            print(f'Account is replenished by {amount}. Your balance is {self.balance}.')
+        else:
+            print('Error: Amount has to be more than zero')
+
+    def withdraw(self, amount):
+        if amount <= 0:
+            print('Error: Amount has to be more than zero')
+        elif amount > self.balance:
+            print('Error: Not enough balance')
+        else:
+            self.balance -= amount
+            print(f'Withdrawn {amount}. Current balance: {self.balance}')
+
+    def get_balance(self):
+        return self.balance
+
+# Example
+account = BankAccount('Tom Cezar', 3000)
+account.deposit(600) #Account is replenished by 600.Your balance is 3600.
+account.withdraw(4000) #Error: Not enough balance
+
+print(account.get_balance()) #3600
