@@ -1519,3 +1519,118 @@ account.deposit(600) #Account is replenished by 600.Your balance is 3600.
 account.withdraw(4000) #Error: Not enough balance
 
 print(account.get_balance()) #3600
+class Book:
+    def __init__(self, title, author, year):
+        self.title = title
+        self.author = author
+        self.year = year
+
+    def __str__(self):
+        return f'"{self.title}" by {self.author} ({self.year})'
+
+
+class Library:
+    def __init__(self):
+        self.books = []
+
+    def add_book(self, book):
+        self.books.append(book)
+        print(f'Book "{book.title}" added to library.')
+
+    def remove_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                self.books.remove(book)
+                print(f'Book "{title}" deleted from library.')
+                return
+        print(f'Error: Book with title "{title}" is not found.')
+
+    def find_book(self, title):
+        for book in self.books:
+            if book.title == title:
+                return str(book)
+        return f'Book with title "{title}" is not found.'
+
+# Example:
+book1 = Book("1984", "George Orwell", 1949)
+book2 = Book("To Kill a Mockingbird", "Harper Lee", 1960)
+
+library = Library()
+library.add_book(book1)
+library.add_book(book2)
+
+print(library.find_book("1984"))  # Выводит информацию о книге
+library.remove_book("1984")  # Удаляет книгу
+print(library.find_book("1984"))  # Пытается найти книгу после удаления
+
+# Heritage 
+
+import math
+
+class Shape:
+    def area(self):
+        return 0
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * (self.radius ** 2)
+
+rectangle = Rectangle(10, 20)
+circle = Circle(5)
+
+print(rectangle.area())  # 200
+print(circle.area())  # 78.53981633974483 (примерно 78.5)
+# Quene
+class Queue:
+    def __init__(self):
+        self.queue = []
+
+    def enqueue(self, item):
+        self.queue.append(item)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.queue.pop(0)
+        else:
+            return "Очередь пуста"
+
+    def is_empty(self):
+        return len(self.queue) == 0
+
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+print(queue.dequeue())  # 1
+print(queue.is_empty())  # False
+#Polimorphism
+class Animal:
+    def make_sound(self):
+        return "Some sound"
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof"
+
+class Cat(Animal):
+    def make_sound(self):
+        return "Meow"
+
+def animal_sounds(animals):
+    for animal in animals:
+        print(animal.make_sound())
+
+dog = Dog()
+cat = Cat()
+animals = [dog, cat]
+animal_sounds(animals)
