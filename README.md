@@ -1634,3 +1634,92 @@ dog = Dog()
 cat = Cat()
 animals = [dog, cat]
 animal_sounds(animals)
+#Инкапсуляция- защита ПОЛЕЙ
+#public -общедоступный
+#private - закрытый(можем обращаться только внутри класса через методы get(возвращает),set(пишет логику как с ним обращаться),delete)
+#name = ''
+#del name # удаляет обьект
+#protected - защищенный- есть согласованность, лучше не образааться извне
+#example
+"deacrator декаратор нужен изменить логику финкции без измениния кода
+# __init__ -экземпляр класса и его пр()
+
+'''class Account:
+    def __init__(self,login,code):
+        self.login = login # мы тут переопределяем Public field
+        self.__code = code #private field
+    @property -#позволяет нам образаться прямо к методу как к экзампляру 
+    
+    class C
+    def get_code(self): # геттер возвращает приватное поле
+        return self.__code
+
+    @get_code.setter
+    def get_code(self,new_code): #сеттер - тут мы прописыввем логику обращения к этому полю
+        if not isinstance(self,new_code,int ): #Проверяем соотвествие кода- целому числу
+            raise ValueError ('Code has to be integer')
+        self.__code = new_code  #Сеттер присваевает свой новый аргумент как новое значение к защищенному полю(__code)
+
+my_account = Account('login@gmail.com', 123)  # Создаем обьект класса
+my_account.get_code = '123'  # Присваеваем новое значение через setter
+print(my_account.get_code)'''  # Получаем это(защищенное) поле через getter
+#@get_code.deleter
+#def get_code(self):
+#    del self.__code
+# формиируйте класс Bank с полями name balance при этом поле balance нужно инкапсулирровать, например balance  должен быть больше 3
+
+'''class Bank:
+    def __init__ (self,name , balance):
+        self.name= name
+        self.__balance = balance
+    @property
+    def get_balance(self,new_balance):
+        return self.__balance
+
+    @get_balance.setter
+    def get_balance(self,value):
+        if len(srt(value))> 3 :
+            raise ValueError('length need to be less than 3')
+        if  not isinstance(value, float,int)):
+            raise ValueErrir
+        self.__balance = value
+balance=  Bank('My Name',1234)
+balance= new_balance = 1234 '''
+
+#Формируйте класс OpenUrls с атрибутом url
+#поле url должны инкапсулировать,
+# #url должен иметь правильный маршрут,
+#например должен иметь "https://" и "."
+'''class OpenUrls:
+    def init(self, url):
+        self.__url = url
+
+    # Геттер
+
+    # Сеттер(где логика должна находиться)
+
+
+import webbrowser
+
+
+class OpenUrls:
+    def init(self, url):
+        self.__url = url
+
+    # Геттер
+    @property
+    def get_url(self):
+        return self.__url
+
+    # Сеттер(где логика должна находиться)
+    @get_url.setter
+    def get_url(self, new_url):
+        if 'https://' in new_url and '.' in new_url:
+            self.__url = new_url
+            webbrowser.open(new_url)
+        else:
+            raise ValueError('Неправильный адрес')
+
+
+open_url = OpenUrls('https://instagram.com')
+open_url.get_url = 'https://instagram.com'  '''
