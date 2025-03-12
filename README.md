@@ -1690,7 +1690,7 @@ balance= new_balance = 1234 '''
 #поле url должны инкапсулировать,
 # #url должен иметь правильный маршрут,
 #например должен иметь "https://" и "."
-'''class OpenUrls:
+class OpenUrls:
     def init(self, url):
         self.__url = url
 
@@ -1719,7 +1719,39 @@ class OpenUrls:
             webbrowser.open(new_url)
         else:
             raise ValueError('Неправильный адрес')
+class KgToPounds:
 
+    def __init__(self, kg):
+        self.__kg = kg
+
+    def to_pounds(self):
+        return self.__kg * 2.205
+class Soda:
+    def __init__(self, ingredient=None):
+        if isinstance(ingredient, str):
+            self.ingredient = ingredient
+        else:
+            self.ingredient = None
+
+    def show_my_drink(self):
+        if self.ingredient:
+            print(f'Газировка и {self.ingredient}')
+        else:
+            print('Обычная газировка')
+drink1 = Soda()
+drink2 = Soda('малина')
+drink3 = Soda(5)
+drink1.show_my_drink()
+drink2.show_my_drink()
+drink3.show_my_drink()            
+    def set_kg(self, new_kg):
+        if isinstance(new_kg, (int, float)):
+            self.__kg = new_kg
+        else:
+            raise ValueError('Килограммы задаются только числами')
+
+    def get_kg(self):
+        return self.__kg
 
 open_url = OpenUrls('https://instagram.com')
-open_url.get_url = 'https://instagram.com'  '''
+open_url.get_url = 'https://instagram.com'  
