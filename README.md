@@ -1755,3 +1755,67 @@ drink3.show_my_drink()
 
 open_url = OpenUrls('https://instagram.com')
 open_url.get_url = 'https://instagram.com'  
+a = (11 * 2 ** 2)- (13 / 4) + 7
+print(float(a)) #47.75
+print(int(a)) #47
+from sys import getsizeof
+res =getsizeof(3 ** 9090001) /(1024 * 1024)
+print( res) #1.8320083618164062
+#Print i as long as i is less than 6:
+i = 1
+while i <6:
+    print(i)
+#With the break statement we can stop the loop even if the while condition is true:
+#exit the loop when it's 3
+i= 3
+while i <6:
+    print(i)
+    if i ==3:
+        break
+    i+=1 #3
+#Continue to the next iteration if i is 3:
+i = 0
+while i<6:
+    i +=1
+    if i==3:
+        continue
+    print(i) #1,2,3,4,5,6
+#Print a message once the condition is false:
+i = 1
+while i<6:
+    print(i)
+    i +=1
+else:
+    print('i is not longer less that 6') #1,2,3,4,5,i is no longer less than 6    
+#Class Polymorphism
+class Car:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Drive!")
+
+class Boat:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Sail!")
+
+class Plane:
+  def __init__(self, brand, model):
+    self.brand = brand
+    self.model = model
+
+  def move(self):
+    print("Fly!")
+
+car1 = Car("Ford", "Mustang")       #Create a Car object
+boat1 = Boat("Ibiza", "Touring 20") #Create a Boat object
+plane1 = Plane("Boeing", "747")     #Create a Plane object
+
+for x in (car1, boat1, plane1):
+  x.move()
+                                          
